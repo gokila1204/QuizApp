@@ -100,6 +100,33 @@ const questions = [
             {text:"Rose", correct:false},
             {text:"Butterfly Pea", correct:false},
         ]
+    },
+    {
+        question: "MS-Word is an example of",
+        answers: [
+            {text: "An operating system", correct: false},
+            {text: " A processing device", correct: false},
+            {text: "Application software", correct: true},
+            {text: "An input device", correct: false},
+        ]
+    },
+    {
+        question: "National Income estimates in India are prepared by",
+        answers: [
+            {text: "Planning Commission", correct: false},
+            {text: "Central statistical organisation", correct: true},
+            {text: "Reserve Bank of India", correct: false},
+            {text: "Indian statistical Institute", correct: false},
+        ]
+    },
+    {
+        question: "Ctrl, Shift and Alt are called .......... keys.",
+        answers: [
+            {text: "modifier", correct: true},
+            {text: "function", correct: false},
+            {text: "alphanumeric", correct: false},
+            {text: "adjustment", correct: false},
+        ]
     }
 ]
 function startTimer(){
