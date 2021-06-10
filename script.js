@@ -6,6 +6,8 @@ const questionElement = document.getElementById('question');
 
 const answersButtons = document.getElementById('answers-buttons');
 
+const timer = document.getElementById('timer');
+
 startButton.addEventListener('click', startGame);
 
 nextButton.addEventListener('click', () =>{
@@ -16,6 +18,9 @@ let shuffeleQuestions, currentQuestionIndex;
 
 function startGame(){
     console.log('started');
+    timer.classList.remove('hide');
+    timer.classList.add('timer');
+    startTimer();
     startButton.classList.add('hide');
     questionContainerElement.classList.remove('hide');
     shuffeleQuestions = questions.sort(() => Math.random() -.5)
@@ -72,8 +77,10 @@ const questions = [
     {
         question:"What is 2*2=?",
         answers:[
+            {text:"10", correct:false},
             {text:"4", correct:true},
             {text:"8", correct:false},
+            {text:"12", correct:false},
         ]
     },
     {
@@ -81,6 +88,8 @@ const questions = [
         answers:[
             {text:"36", correct:true},
             {text:"39", correct:false},
+            {text:"43", correct:false},
+            {text:"38", correct:false},
         ]
     },
     {
@@ -93,3 +102,31 @@ const questions = [
         ]
     }
 ]
+function startTimer(){
+    let hour = document.getElementById('hour');
+    let minute = document.getElementById('minute');
+    let seconds = document.getElementById('seconds');
+    let i = j = k = 1;
+    setInterval(()=>{ 
+        if(i<60){
+            let x = i;
+            seconds.innerText = ('00' + x).substr(-2);
+            console.log(i)
+            i++;
+        }else if(j < 60){
+            let y = j;
+            minute.innerText = ('00' + y).substr(-2);
+            console.log(j)
+            j++;
+            i=1;
+        }else{
+            let z = k;
+            hour.innerText = ('00' + z).substr(-2);
+            console.log(k)
+            k++;
+            i=1;
+            j=1;
+        }
+    }, 1000);
+    
+}
